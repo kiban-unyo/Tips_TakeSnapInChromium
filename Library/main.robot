@@ -79,11 +79,11 @@
         </property>
         <property name="enabled" class="Boolean">true</property>
         <property name="changedProperties" class="java.util.HashSet">
-          <element class="String">name</element>
+          <element class="String" id="3">name</element>
         </property>
       </object>
-      <object class="Transition" serializationversion="3" id="3">
-        <property name="name" class="String">Assign Path</property>
+      <object class="Transition" serializationversion="3" id="4">
+        <property name="name" class="String">ファイル出パス設定</property>
         <property name="stepAction" class="AssignVariable" serializationversion="4">
           <property name="stringExpr" class="Expression" serializationversion="1">
             <property name="text" class="String">trim(path) + "\\Desktop\\" + Robot.name +"\\"</property>
@@ -92,16 +92,18 @@
             <property name="name" idref="0"/>
           </property>
         </property>
-        <property name="elementFinders" class="ElementFinders" id="4"/>
+        <property name="elementFinders" class="ElementFinders" id="5"/>
         <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
         <property name="comment">
           <null/>
         </property>
         <property name="enabled" class="Boolean">true</property>
-        <property name="changedProperties" class="java.util.HashSet"/>
+        <property name="changedProperties" class="java.util.HashSet">
+          <element idref="3"/>
+        </property>
       </object>
-      <object class="Transition" serializationversion="3" id="5">
-        <property name="name" class="String">Call Snap</property>
+      <object class="Transition" serializationversion="3" id="6">
+        <property name="name" class="String">Call スナップ取得</property>
         <property name="stepAction" class="CallRobot2Step">
           <property name="robot2Name" class="String">Snap</property>
           <property name="inputValueExpression" class="kapow.robot.plugin.common.stepaction.rl2.InputValueBeanList">
@@ -114,15 +116,17 @@
             </object>
           </property>
         </property>
-        <property name="elementFinders" idref="4"/>
+        <property name="elementFinders" idref="5"/>
         <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
         <property name="comment">
           <null/>
         </property>
         <property name="enabled" class="Boolean">true</property>
-        <property name="changedProperties" class="java.util.HashSet"/>
+        <property name="changedProperties" class="java.util.HashSet">
+          <element idref="3"/>
+        </property>
       </object>
-      <object class="End" id="6"/>
+      <object class="End" id="7"/>
     </steps>
     <blockEndStep class="BlockEndStep"/>
     <edges class="ArrayList">
@@ -134,19 +138,19 @@
       </object>
       <object class="TransitionEdge">
         <from idref="2"/>
-        <to idref="3"/>
+        <to idref="4"/>
         <name/>
         <comment/>
       </object>
       <object class="TransitionEdge">
-        <from idref="3"/>
-        <to idref="5"/>
-        <name/>
-        <comment/>
-      </object>
-      <object class="TransitionEdge">
-        <from idref="5"/>
+        <from idref="4"/>
         <to idref="6"/>
+        <name/>
+        <comment/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="6"/>
+        <to idref="7"/>
         <name/>
         <comment/>
       </object>
